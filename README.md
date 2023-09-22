@@ -1,1 +1,1 @@
-# TA-22E-Grupp3
+# Grupp 3: Projektijuhtimine
