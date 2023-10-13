@@ -1,31 +1,31 @@
 Miks on asjad nii?
 
-UserID:
+user
+id: bigint - igal kasutajal on erinev id ning bigint, sest pole vaja tähti selle jaoks
+name: varchar - kasutaja nimi millega teised tunnevad inimese ära
+email: varchar - sisselogimiseks ja teavituste saatmiseks
+password: varchar - sisselogimiseks ning varchar, sest võib nii tähti kui ka numbreid
 
-Email(str) - emailides võib olla erinevaid numbreid ja sümboleid. (@, .)
+Projekt
+projekti nimi: varchar - äkki on tahtmine panna projekti nimele numbreid juurde
+algus: date - kuupäev
+tähtaeg: date - lõpetamis kuupäev
+eelarve: bigint - number kui suur on eelarve
+tunnihind: bigint - number kui suur on tunnihind
+meeskond: varchar - meeskonnas on mitu erinevat inimest 
 
-Password(str) - Tugevas paroolis on erinevaid sümboleid, ning võiksid olla krüpteeritud passwordid
+Ülesanded
+pealkiri: varchar - äkki on tahtmine panna ülesande nimele numbreid juurde
+ülesande algus: datetime - kuna on tunnihind siis võiks datetime olla
+eeldatav ajakulu: datetime -  et oleks võimalikult täpne kui kaua läks ülesandega
+vastutaja: varchar - inimene kes tegeleb/vastutab selle ülesande üle
+ülesande kirjeldus: text - text, sest siis saab säilitada neid parem ning võib päris suur olla kogu see kirjeldus
+tehtud töö: boolean - kas on tehtud või mitte
+failid: blob - et saaks salvestada ka pilte ning dokumente, mitte ainult tähti ja numbreid
 
-Username(str) - sest inimesed tahavad kasutada numbreid enda username-ides
-
-Groups
-
-Admin(bool) - Kas olla admini õigusega või olla tavaline kasutaja
-
-Users(str) - Võimalus anda endale rolli nime
-
-Groupname(str) - Grupi nimes võib olla ükskõik mis sümboleid või numbreid
-
-
-
-
-
-ADMIN:
-
-Change users - Sest meil on ainult vaja teada, et kas me saame muuta või mitte, tänu sellele lihtsalt true or false
-
-View history - Sama nagu eelmisega, lihtsalt vaja teada, kas saame vaadata ajalugu või mitte
-
-Make changes - täpselt nagu kõikide teistega
-
+Töölogid
+kuupäev: date - ongi lihtsalt kuupäev millal on kirjutatud töölog
+ajakulu: datetime - kui kaua kulus aega mingile ülesandele
+teostaja: varchar - kes tegi sissekirje
+tegevuse kirjeldus: text - teha eraldi file, et saaks säilitada paremini kogu seda tegevuse kirjeldust hiljem
 
