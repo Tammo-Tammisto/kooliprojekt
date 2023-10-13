@@ -1,0 +1,31 @@
+Miks on asjad nii?
+
+UserID:
+
+Email(str) - emailides võib olla erinevaid numbreid ja sümboleid. (@, .)
+
+Password(str) - Tugevas paroolis on erinevaid sümboleid, ning võiksid olla krüpteeritud passwordid
+
+Username(str) - sest inimesed tahavad kasutada numbreid enda username-ides
+
+Groups
+
+Admin(bool) - Kas olla admini õigusega või olla tavaline kasutaja
+
+Users(str) - Võimalus anda endale rolli nime
+
+Groupname(str) - Grupi nimes võib olla ükskõik mis sümboleid või numbreid
+
+
+
+
+
+ADMIN:
+
+Change users - Sest meil on ainult vaja teada, et kas me saame muuta või mitte, tänu sellele lihtsalt true or false
+
+View history - Sama nagu eelmisega, lihtsalt vaja teada, kas saame vaadata ajalugu või mitte
+
+Make changes - täpselt nagu kõikide teistega
+
+
