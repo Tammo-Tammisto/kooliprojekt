@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Kooliprojekt;
+using KooliProjekt;
+using KooliProjekt.Models;
 
 namespace Kooliprojekt.Data
 {
@@ -7,7 +8,7 @@ namespace Kooliprojekt.Data
     {
         public static async Task<PagedResult<T>> GetPagedAsync<T>(this IQueryable<T> query, int page, int pageSize)
         {
-            var result = new PagedResult<T>
+            var result = new PagedResult
             {
                 CurrentPage = page,
                 PageSize = pageSize,

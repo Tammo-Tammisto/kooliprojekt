@@ -1,4 +1,4 @@
-﻿namespace KooliProjekt;
+﻿namespace KooliProjekt.Models;
 
 public abstract class PagedResultBase
 {

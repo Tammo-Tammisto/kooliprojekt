@@ -1,6 +1,6 @@
 ﻿namespace KooliProjekt.Data
 {
-    public class team_members
+    public class Team_Members
     {
         public string Id { get; set; }
 

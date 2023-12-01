@@ -1,4 +1,4 @@
-﻿namespace KooliProjekt;
+﻿namespace KooliProjekt.Models;
 
 public class PagedResult<T> : PagedResultBase
 {
