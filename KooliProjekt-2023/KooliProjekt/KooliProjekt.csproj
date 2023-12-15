@@ -18,4 +18,10 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\WorkLogs\" />
+    <Folder Include="Views\User\" />
+    <Folder Include="Views\Tasks\" />
+  </ItemGroup>
+
 </Project>
