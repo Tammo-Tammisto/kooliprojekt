@@ -13,7 +13,7 @@ namespace KooliProjekt.Controllers
             _logger = logger;
         }
 
-        public IActionResult GetPagedAsync()
+        public IActionResult Index()
         {
             return View();
         }

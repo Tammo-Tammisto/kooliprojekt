@@ -1,6 +1,4 @@
-﻿namespace KooliProjekt.Models;
-
-public abstract class PagedResultBase
+﻿public abstract class PagedResultBase
 {
     public int CurrentPage { get; set; }
     public int PageCount { get; set; }

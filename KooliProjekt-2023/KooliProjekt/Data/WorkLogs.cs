@@ -2,7 +2,6 @@
 {
     public class WorkLogs
     {
-
         public string Id { get; set; }
 
         public string Date { get; set; }

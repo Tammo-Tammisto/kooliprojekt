@@ -1,10 +1,7 @@
-﻿using Microsoft.Identity.Client;
-
-namespace KooliProjekt.Data
+﻿namespace KooliProjekt.Data
 {
     public class Tasks
-    {
-
+    {   
         public string Id { get; set; }
 
         public string Title { get; set; }
