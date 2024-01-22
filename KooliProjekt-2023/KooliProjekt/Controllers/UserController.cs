@@ -1,14 +1,24 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using KooliProjekt.Data;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace KooliProjekt.Controllers
 {
     public class UserController : Controller
     {
-        // GET: UserController
-        public ActionResult Index()
+        private readonly ApplicationDbContext _dataContext;
+
+        public UserController(ApplicationDbContext dataContext)
         {
-            return View();
+            _dataContext = dataContext;
+        }
+
+        // GET: UserController
+        public ActionResult Index(int page = 1, int pageSize = 10)
+        {
+            var users = _dataContext.User.GetPagedAsync(page, pageSize);
+
+            return View(users);
         }
 
         // GET: UserController/Details/5

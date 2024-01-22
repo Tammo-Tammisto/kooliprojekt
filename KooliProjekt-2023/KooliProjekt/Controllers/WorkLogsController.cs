@@ -1,14 +1,24 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using KooliProjekt.Data;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace KooliProjekt.Controllers
 {
     public class WorkLogsController : Controller
     {
-        // GET: WorkLogsController
-        public ActionResult Index()
+        private readonly ApplicationDbContext _dataContext;
+
+        public WorkLogsController(ApplicationDbContext dataContext)
         {
-            return View();
+            _dataContext = dataContext;
+        }
+
+        // GET: WorkLogsController
+        public ActionResult Index(int page = 1, int pageSize = 10)
+        {
+            var workLogs = _dataContext.WorkLogs.GetPagedAsync(page, pageSize);
+
+            return View(workLogs);
         }
 
         // GET: WorkLogsController/Details/5

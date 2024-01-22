@@ -1,14 +1,24 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using KooliProjekt.Data;
 using Microsoft.AspNetCore.Mvc;
 
 namespace KooliProjekt.Controllers
 {
     public class ProjectController : Controller
     {
-        // GET: ProjectController
-        public ActionResult Index()
+        private readonly ApplicationDbContext _dataContext;
+
+
+        public ProjectController(ApplicationDbContext dataContext)
         {
-            return View();
+            _dataContext = dataContext;
+        }
+
+        // GET: ProjectController
+        public ActionResult Index(int page = 1, int pageSize = 10)
+        {
+            var projects = _dataContext.Project.GetPagedAsync(page, pageSize);
+
+            return View(projects);
         }
 
         // GET: ProjectController/Details/5

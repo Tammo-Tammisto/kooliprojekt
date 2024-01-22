@@ -1,14 +1,23 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using KooliProjekt.Data;
 using Microsoft.AspNetCore.Mvc;
 
 namespace KooliProjekt.Controllers
 {
     public class TasksController : Controller
     {
-        // GET: TasksController
-        public ActionResult Index()
+        private readonly ApplicationDbContext _dataContext;
+
+        public TasksController(ApplicationDbContext dataContext)
         {
-            return View();
+            _dataContext = dataContext;
+        }
+
+        // GET: TasksController
+        public ActionResult Index(int page = 1, int pageSize = 10)
+        {
+            var tasks = _dataContext.Tasks.GetPagedAsync(page, pageSize);
+
+            return View(tasks);
         }
 
         // GET: TasksController/Details/5
