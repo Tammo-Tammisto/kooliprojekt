@@ -1,3 +1,4 @@
+using FluentValidation;
 using KooliProjekt.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -19,7 +20,7 @@ namespace KooliProjekt
             builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             builder.Services.AddControllersWithViews();
-
+            builder.Services.AddValidatorsFromAssemblyContaining<ProjectValidator>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
