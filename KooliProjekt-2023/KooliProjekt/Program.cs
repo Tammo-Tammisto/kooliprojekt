@@ -1,5 +1,6 @@
 using FluentValidation;
 using KooliProjekt.Data;
+using KooliProjekt.Data.Validation;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -21,6 +22,10 @@ namespace KooliProjekt
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             builder.Services.AddControllersWithViews();
             builder.Services.AddValidatorsFromAssemblyContaining<ProjectValidator>();
+            builder.Services.AddValidatorsFromAssemblyContaining<TasksValidator>();
+            builder.Services.AddValidatorsFromAssemblyContaining<TeamMembersValidator>();
+            builder.Services.AddValidatorsFromAssemblyContaining<UserValidator>();
+            builder.Services.AddValidatorsFromAssemblyContaining<WorkLogsValidator>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
