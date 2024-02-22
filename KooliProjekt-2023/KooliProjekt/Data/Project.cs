@@ -1,12 +1,13 @@
-﻿namespace KooliProjekt.Data;
-public class Project
+﻿namespace KooliProjekt.Data
 {
-    public string Id { get; set; }
-    public string ProjectName { get; set; }
-    public string Start { get; set; }
-    public string Deadline { get; set; }
-    public string Budget { get; set; }
-    public string HourlyRate { get; set; }
-    public string Team { get; set; }
+    public class Project
+    {
+        public string Id { get; set; }
+        public string ProjectName { get; set; }
+        public DateTime Start { get; set; }
+        public DateTime Deadline { get; set; }
+        public decimal Budget { get; set; }
+        public decimal HourlyRate { get; set; }
+        public string Team { get; set; }
+    }
 }
-

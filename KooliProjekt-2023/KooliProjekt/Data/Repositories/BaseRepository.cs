@@ -1,6 +1,9 @@
-﻿namespace KooliProjekt.Data.Repositories
+﻿using KooliProjekt.Models;
+using System.Threading.Tasks;
+
+namespace KooliProjekt.Data.Repositories
 {
-    public abstract class BaseRepository<T> where T : Entity
+    public class BaseRepository<T> where T : Entity
     {
         protected ApplicationDbContext Context { get; }
 
@@ -12,14 +15,12 @@
         public virtual async Task<PagedResult<T>> List(int page, int pageSize)
         {
             var result = await Context.Set<T>().GetPagedAsync(page, pageSize);
-
             return result;
         }
 
         public virtual async Task<T> GetById(int id)
         {
             var result = await Context.Set<T>().FindAsync(id);
-
             return result;
         }
 

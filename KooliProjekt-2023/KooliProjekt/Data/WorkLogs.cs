@@ -2,11 +2,11 @@
 {
     public class WorkLogs
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
 
-        public string Date { get; set; }
+        public DateTime Date { get; set; }
 
-        public string TimeCost { get; set; }
+        public decimal TimeCost { get; set; }
 
         public string Performer { get; set; }
 

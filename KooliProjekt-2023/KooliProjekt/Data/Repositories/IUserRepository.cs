@@ -1,6 +1,12 @@
-﻿namespace KooliProjekt.Data.Repositories
+﻿using KooliProjekt.Models;
+
+namespace KooliProjekt.Data.Repositories
 {
-    public class IUserRepository
+    public interface IUserRepository
     {
+        Task<PagedResult<User>> List(int page, int pageSize);
+        Task<User> GetById(int id);
+        Task Save(User user);
+        Task Delete(int id);
     }
 }
