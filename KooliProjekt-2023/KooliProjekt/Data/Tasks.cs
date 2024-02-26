@@ -2,9 +2,9 @@
 
 namespace KooliProjekt.Data
 {
-    public class Tasks
+    public class Tasks : Entity
     {
-        public int Id { get; set; }
+        public new int Id { get; set; }
 
         public string Title { get; set; }
 
@@ -12,11 +12,11 @@ namespace KooliProjekt.Data
 
         public TimeSpan ExpectedTime { get; set; }
 
-        public string InCharge { get; set; }
+        public Boolean InCharge { get; set; }
 
         public string Description { get; set; }
 
-        public string WorkDone { get; set; }
+        public Boolean WorkDone { get; set; }
 
         public string Files { get; set; }
     }

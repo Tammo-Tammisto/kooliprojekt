@@ -1,8 +1,8 @@
 ﻿namespace KooliProjekt.Data
 {
-    public class WorkLogs
+    public class WorkLogs : Entity
     {
-        public int Id { get; set; }
+        public new int Id { get; set; }
 
         public DateTime Date { get; set; }
 

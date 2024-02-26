@@ -1,6 +1,12 @@
-﻿namespace KooliProjekt.Data.Repositories
+﻿using KooliProjekt.Models;
+
+namespace KooliProjekt.Data.Repositories
 {
-    public class ITeamMembersRepository
+    public interface ITeamMembersRepository
     {
+        Task<PagedResult<TeamMembers>> List(int page, int pageSize);
+        Task<TeamMembers> Get(int id);
+        Task Save(TeamMembers member);
+        Task Delete(int id);
     }
 }

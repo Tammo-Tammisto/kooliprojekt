@@ -1,5 +1,5 @@
-﻿using KooliProjekt.Models;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using KooliProjekt.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace KooliProjekt.Data.Repositories

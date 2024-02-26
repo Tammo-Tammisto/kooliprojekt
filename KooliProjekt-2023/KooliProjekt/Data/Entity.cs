@@ -1,7 +1,5 @@
-﻿namespace KooliProjekt.Data
+﻿namespace KooliProjekt.Data;
+public class Entity
 {
-    public class Entity
-    {
-        public int Id { get; set; }
-    }
+    public int Id { get; set; }
 }

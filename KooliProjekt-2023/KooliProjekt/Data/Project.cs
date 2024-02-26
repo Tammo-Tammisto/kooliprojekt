@@ -1,8 +1,8 @@
 ﻿namespace KooliProjekt.Data
 {
-    public class Project
+    public class Project : Entity
     {
-        public string Id { get; set; }
+        public new int Id { get; set; }
         public string ProjectName { get; set; }
         public DateTime Start { get; set; }
         public DateTime Deadline { get; set; }

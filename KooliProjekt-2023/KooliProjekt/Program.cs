@@ -68,17 +68,17 @@ namespace KooliProjekt
 
                 if (dbContext.Project.Count() == 0)
                 {
-                    Project project = new();
+                    Project project = new Project();
 
-                    project.Id = "1";
+                    project.Id = 1;
                     project.ProjectName = "Projekt #1";
-                    project.Start = "23.10.2023";
-                    project.Deadline = "23.01.2024";
-                    project.Budget = "100000";
-                    project.HourlyRate = "100";
+                    project.Start = new DateTime (2023, 10, 23);
+                    project.Deadline = new DateTime(2024, 01, 23);
+                    project.Budget = 100000;
+                    project.HourlyRate = 100;
                     project.Team = "Team #1";
 
-                    dbContext.Add(project);
+                    dbContext.Project.Add(project);
                     dbContext.SaveChanges();
                 }
             }

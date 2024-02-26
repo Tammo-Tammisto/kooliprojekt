@@ -1,35 +1,41 @@
 ﻿using System.Threading.Tasks;
 using KooliProjekt.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace KooliProjekt.Data.Repositories
 {
-    public class TeamMembersRepository : ITeamMembersRepository
+    public class TeamMembersRepository : BaseRepository<TeamMembers>, ITeamMembersRepository
     {
-        private readonly BaseRepository<TeamMembers> _baseRepository;
-
-        public TeamMembersRepository(ApplicationDbContext context)
-        {
-            _baseRepository = new BaseRepository<TeamMembers>(context);
-        }
+        public TeamMembersRepository(ApplicationDbContext context) : base(context) { }
 
         public async Task<PagedResult<TeamMembers>> List(int page, int pageSize)
         {
-            return await _baseRepository.List(page, pageSize);
+            return await base.List(page, pageSize);
         }
 
         public async Task<TeamMembers> GetById(int id)
         {
-            return await _baseRepository.GetById(id);
+            return await base.GetById(id);
         }
 
         public async Task Save(TeamMembers teamMember)
         {
-            await _baseRepository.Save(teamMember);
+            await base.Save(teamMember);
         }
 
         public async Task Delete(int id)
         {
-            await _baseRepository.Delete(id);
+            await base.Delete(id);
+        }
+        public async Task<TeamMembers> Get(int id)
+        {
+            return await base.GetById(id);
+        }
+
+        public override bool Equals(object? obj)
+        {
+            return obj is TeamMembersRepository repository &&
+                   EqualityComparer<ApplicationDbContext>.Default.Equals(Context, repository.Context);
         }
     }
 }
