@@ -31,11 +31,5 @@ namespace KooliProjekt.Data.Repositories
         {
             return await base.GetById(id);
         }
-
-        public override bool Equals(object? obj)
-        {
-            return obj is TeamMembersRepository repository &&
-                   EqualityComparer<ApplicationDbContext>.Default.Equals(Context, repository.Context);
-        }
     }
 }

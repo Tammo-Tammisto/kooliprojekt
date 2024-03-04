@@ -26,6 +26,7 @@ namespace KooliProjekt
             builder.Services.AddValidatorsFromAssemblyContaining<TeamMembersValidator>();
             builder.Services.AddValidatorsFromAssemblyContaining<UserValidator>();
             builder.Services.AddValidatorsFromAssemblyContaining<WorkLogsValidator>();
+            builder.Services.AddScoped<IFileClient, LocalFileClient>();
             var app = builder.Build();
 
             if (app.Environment.IsDevelopment())
