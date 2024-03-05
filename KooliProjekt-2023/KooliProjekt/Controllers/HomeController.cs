@@ -7,18 +7,28 @@ namespace KooliProjekt.Controllers
 {
     public class HomeController : Controller
     {
+        
         private readonly ILogger<HomeController> _logger;
         //private readonly ApplicationDbContext _dataContext;
 
-        public HomeController(ILogger<HomeController> logger, ApplicationDbContext dataContext)
+        public HomeController(ILogger<HomeController> logger, ApplicationDbContext dataContext, IFileClient fileClient)
         {
             _logger = logger;
             //_dataContext = dataContext;
+            
         }
 
         public IActionResult Index()
         {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult Index(IFormFile[] files)
+        {
+
+
+            return RedirectToAction(nameof(Index));
         }
 
         public IActionResult Privacy()

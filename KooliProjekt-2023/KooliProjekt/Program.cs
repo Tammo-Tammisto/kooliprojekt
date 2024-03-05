@@ -61,9 +61,9 @@ namespace KooliProjekt
                 var userManager = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
 
                 IdentityUser user = new();
-                user.UserName = "aidake-mind@tim.ee";
+                user.UserName = "user";
                 user.EmailConfirmed = true;
-                user.PasswordHash = userManager.PasswordHasher.HashPassword(user, "KristiTerroriseerib");
+                user.PasswordHash = userManager.PasswordHasher.HashPassword(user, "password");
 
                 userManager.CreateAsync(user).Wait();
 
