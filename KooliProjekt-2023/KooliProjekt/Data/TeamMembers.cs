@@ -1,4 +1,5 @@
-﻿namespace KooliProjekt.Data
+﻿using KooliProjekt.Models;
+namespace KooliProjekt.Data
 {
     public class TeamMembers : Entity
     {
