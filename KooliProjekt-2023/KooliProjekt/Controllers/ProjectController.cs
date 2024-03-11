@@ -6,17 +6,20 @@ namespace KooliProjekt.Controllers
     public class ProjectController : Controller
     {
         private readonly ApplicationDbContext _dataContext;
+        private readonly IFileClient _fileClient;
 
-
-        public ProjectController(ApplicationDbContext dataContext)
+        public ProjectController(ApplicationDbContext dataContext, IFileClient fileClient)
         {
             _dataContext = dataContext;
+            _fileClient = fileClient;
         }
 
         // GET: ProjectController
         public ActionResult Index(int page = 1, int pageSize = 10)
         {
+
             var projects = _dataContext.Project.GetPagedAsync(page, pageSize);
+            ViewBag.Files = _fileClient.List(FileStoreNames.Images);
 
             return View(projects);
         }
@@ -36,10 +39,14 @@ namespace KooliProjekt.Controllers
         // POST: ProjectController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(IFormCollection collection, IFormFile[] files)
         {
             try
             {
+                foreach (var file in files)
+                {
+                    _fileClient.Save(file.OpenReadStream(), file.FileName, FileStoreNames.Images);
+                }
                 return RedirectToAction(nameof(Index));
             }
             catch
