@@ -11,11 +11,13 @@ namespace KooliProjekt.Controllers
         private readonly ILogger<HomeController> _logger;
         //private readonly ApplicationDbContext _dataContext;
 
-        public HomeController(ILogger<HomeController> logger, ApplicationDbContext dataContext, IFileClient fileClient)
-        {
+        public HomeController(
+            ILogger<HomeController> logger
+            // ApplicationDbContext dataContext,
+            // IFileClient fileClient
+        ) {
             _logger = logger;
             //_dataContext = dataContext;
-            
         }
 
         public IActionResult Index()
